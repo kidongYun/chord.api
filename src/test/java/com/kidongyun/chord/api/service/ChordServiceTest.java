@@ -16,7 +16,6 @@ public class ChordServiceTest {
     @Test
     public void findBase_when_then() {
         /* Arrange */
-        List<Note> stubs = List.of();
 
         /* Act */
 
