@@ -7,10 +7,14 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
+import java.util.Objects;
+
 @Slf4j
 @Getter
 @ToString
 public class Note {
+    public static final Integer OCTAVE_SIZE = 12;
+
     private final Key key;
     private final Integer octave;
     private Integer pitch;
@@ -22,7 +26,11 @@ public class Note {
     }
 
     private static void postBuild(Note note) {
-        note.pitch = note.key.getPitch() + ((note.octave - 1) * 12);
+        if(Objects.isNull(note.key) || Objects.isNull(note.octave)) {
+            return;
+        }
+
+        note.pitch = note.key.getPitch() + ((note.octave - 1) * OCTAVE_SIZE);
     }
 
     public static class NoteBuilder {

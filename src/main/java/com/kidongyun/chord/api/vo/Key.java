@@ -6,19 +6,19 @@ import lombok.ToString;
 @Getter
 @ToString
 public enum Key {
-    DO("C", "도", 1),
-    DO_SHARP("C#", "도샾", 2),
-    RE("D", "레", 3),
-    RE_SHARP("D#", "레샾", 4),
-    MI("E", "미", 5),
-    FA("F", "파", 6),
-    FA_SHARP("F#", "파샾", 7),
-    SOL("G", "솔", 8),
-    SOL_SHARP("G#", "솔샾", 9),
-    LA("A", "라", 10),
-    LA_SHARP("A#", "라샾", 11),
-    SI("B", "시", 12),
-    UNKNOWN("UNKNOWN", "알수없음", 0);
+    DO("C", "도", 0),
+    DO_SHARP("C#", "도샾", 1),
+    RE("D", "레", 2),
+    RE_SHARP("D#", "레샾", 3),
+    MI("E", "미", 4),
+    FA("F", "파", 5),
+    FA_SHARP("F#", "파샾", 6),
+    SOL("G", "솔", 7),
+    SOL_SHARP("G#", "솔샾", 8),
+    LA("A", "라", 9),
+    LA_SHARP("A#", "라샾", 10),
+    SI("B", "시", 11),
+    UNKNOWN("UNKNOWN", "알수없음", -1);
 
     Key(String code, String name, Integer pitch) {
         this.code = code;
