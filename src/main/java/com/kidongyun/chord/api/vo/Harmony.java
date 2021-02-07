@@ -11,6 +11,7 @@ public enum Harmony {
     MAJOR(Set.of(4, 7), ""),
     MINOR(Set.of(3, 7), "m"),
     MINOR_SEVEN(Set.of(3, 7, 10), "m7"),
+    MINOR_SEVEN_FLAT_FIVE(Set.of(3, 6, 10), "m7(-5)"),
     MINOR_MAJOR_SEVEN(Set.of(3, 7, 11), "mM7"),
     ADD_TWO(Set.of(2, 7), "2"),
     AUGMENT(Set.of(4, 8), "+"),
