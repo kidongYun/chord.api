@@ -20,9 +20,10 @@ public class ChordService {
 
     /** 같은 옥타브 내에서 두 음정의 차이를 계산 */
     public Integer diffInOctave(Integer base, Integer target) {
-        Integer basePosition = base % Note.OCTAVE_SIZE;
-        Integer targetPosition = target % Note.OCTAVE_SIZE;
+        log.info("YKD : " + base + ", " + target);
 
-        return Math.abs(basePosition - targetPosition);
+        Integer value = Math.abs(target - base);
+
+        return value % Note.OCTAVE_SIZE;
     }
 }

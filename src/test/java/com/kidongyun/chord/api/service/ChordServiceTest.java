@@ -106,4 +106,19 @@ public class ChordServiceTest {
         /* Assert */
         assertThat(result).isEqualTo(11);
     }
+
+    @Test
+    public void distanceInOctave_when_then() {
+        /* Arrange */
+        Note note1 = Note.of("D1");
+        Note note2 = Note.of("C2");
+
+        /* Act */
+        assert note1 != null;
+        assert note2 != null;
+        Integer result = chordService.diffInOctave(note1.getPitch(), note2.getPitch());
+
+        /* Assert */
+        assertThat(result).isEqualTo(10);
+    }
 }
