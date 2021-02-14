@@ -1,5 +1,6 @@
 package com.kidongyun.chord.api.vo;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -26,6 +27,7 @@ public enum Key {
         this.pitch = pitch;
     }
 
+    @JsonValue
     private final String code;
     private final String name;
     private final Integer pitch;

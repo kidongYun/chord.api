@@ -1,6 +1,7 @@
 package com.kidongyun.chord.api.controller;
 
 import com.kidongyun.chord.api.domain.Note;
+import com.kidongyun.chord.api.dto.GetChordResponse;
 import com.kidongyun.chord.api.service.ChordService;
 import com.kidongyun.chord.api.vo.Harmony;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +15,7 @@ import org.springframework.web.client.HttpServerErrorException;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import static java.util.stream.Collectors.toList;
@@ -42,6 +44,7 @@ public class ChordController {
                 .map(note -> chordService.diffInOctave(base.getPitch(), note.getPitch()))
                 .collect(toSet());
 
-        return ResponseEntity.status(HttpStatus.OK).body(base.getKey().getCode() + Harmony.of(diffs).getMark());
+        return ResponseEntity.status(HttpStatus.OK).body(
+                GetChordResponse.of(base.getKey().getCode() + Harmony.of(diffs).getMark(), noteList));
     }
 }
